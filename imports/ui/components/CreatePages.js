@@ -41,14 +41,14 @@ export default class CreatePages extends Component {
   					<form onSubmit={this.insertNewPage}>
   						<input type="text" name="pageCode" className="page-code" />
   						<textarea name="pageText"></textarea>
-              <button type="submit" className="waves-effect waves-light btn">Enviar Evaluación</button>
+              <button type="submit" className="waves-effect waves-light btn">Crear Pagina</button>
   					</form>
             <hr/>
             <form onSubmit={this.insertNewOption}>
               <input type="text" name="pageCode" className="page-code" />
               <input type="text" name="link" className="option-link" />
               <textarea name="optionText"></textarea>
-              <button type="submit" className="waves-effect waves-light btn">Enviar Evaluación</button>
+              <button type="submit" className="waves-effect waves-light btn">Insertar Opcion</button>
             </form>
   					
   					
