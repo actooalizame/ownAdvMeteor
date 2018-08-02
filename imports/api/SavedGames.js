@@ -4,12 +4,9 @@ import { Meteor } from 'meteor/meteor';
 export const SavedGames = new Mongo.Collection('savedGames');
 
 if (Meteor.isServer){
-	Meteor.publish('savedGames.all', () => {
-	  return SavedGames.find({})
+	Meteor.publish('savedGames.all', function(deviceId) {
+	  return SavedGames.find({deviceId})
 	});
-  /*Meteor.publish('cars.single', (slug) => {
-    return Cars.find({slug:slug}, {sort: {createdAt: -1}, limit: 1})
-  });*/
 }
 
 Meteor.methods({
@@ -19,5 +16,8 @@ Meteor.methods({
       lastStep:lastStep,
       createdAt: new Date(),
     });
+  },
+  'deleteSavedGame': function(savedId){
+    SavedGames.remove(savedId);
   },
 });
